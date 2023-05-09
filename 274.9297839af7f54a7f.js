@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkTradeoff_V2=self.webpackChunkTradeoff_V2||[]).push([[274],{274:(l,d,e)=>{e.r(d),e.d(d,{default:()=>s});var a=e(956),f=e(490);class s extends f.Z{decodeBlock(r){return(0,a.rr)(new Uint8Array(r)).buffer}}}}]);
