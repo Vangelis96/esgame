@@ -13,9 +13,17 @@ const routes: Routes = [
 	{
 		path: 'static-game',
 		component: GridLevelComponent
-	}, 
+	},
+	{
+		path: 'static-game/own',
+		component: GridLevelComponent
+	},  
 	{
 		path: 'dynamic-game',
+		component: SvgLevelComponent
+	},
+	{
+		path: 'dynamic-game/own',
 		component: SvgLevelComponent
 	}, 
 	{

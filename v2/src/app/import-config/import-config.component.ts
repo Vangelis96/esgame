@@ -21,6 +21,7 @@ export class ImportConfigComponent {
 			fileReader.onload = _ => {
 				let result = fileReader.result;
 				if (result) {
+					console.log(result);
 					this.gameService.loadSettings(JSON.parse(result.toString()));
 				}
 			}
@@ -31,9 +32,9 @@ export class ImportConfigComponent {
 	start() {
 		this.gameService.settingsObs.subscribe(settings => {
 			if (settings.mode == 'GRID') {
-				this.router.navigate(['static-game']);
+				this.router.navigate(['static-game', 'own']);
 			} else {
-				this.router.navigate(['dynamic-game']);
+				this.router.navigate(['dynamic-game', 'own']);
 			}
 		});
 	}

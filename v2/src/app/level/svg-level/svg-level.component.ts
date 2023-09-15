@@ -5,6 +5,7 @@ import { map, tap } from 'rxjs';
 import { GameBoardType } from 'src/app/shared/models/game-board-type';
 import { GameBoardClickMode } from 'src/app/shared/models/game-board';
 import dynamicData from '../../../data.json';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,9 +25,11 @@ export class SvgLevelComponent extends LevelBaseComponent {
 		if ((!o || o.levelNumber <= 2) && !this.readOnly) this.openHelp();
 	}));
 
-	constructor(gameService: GameService) {
+	constructor(gameService: GameService, route: Router) {
 		super(gameService);
-		this.gameService.loadSettings(dynamicData);
+		if (route.url.includes('own') == false) {
+			this.gameService.loadSettings(dynamicData);
+		}
 		gameService.initialiseSVGMode();
 		this.settings.subscribe(o => {
 			this.minSelected = o?.minSelected ?? 0;
